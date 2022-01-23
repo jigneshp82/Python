@@ -6,6 +6,7 @@ class Solution:
         ans = 0
         print (s)
         for i, c in enumerate(s):
+            # convert string to digit 
             if c.isdigit():
                 c = int(c)
                 if d: d = d * 10 + c
@@ -22,7 +23,7 @@ class Solution:
                     ans = d
                     sign = c
                     d = None
-        print (stack)
+        # last element /operation needs to added seperatly
         if sign in '*/':
             ans = self.eval(ans, d, sign)
             stack.append(ans)
@@ -31,9 +32,8 @@ class Solution:
             if sign == '-':
                 d = -d
             stack.append(d)   
-
-        print (stack)
-
+        # eveluate the stack with -as of now we should have only + operatin , - operations are done by assigning - sign to digits 
+        # * and / operatins are already completed
         while len(stack) > 1:
             d = stack.pop()
             stack[-1] = self.eval(stack[-1], d, '+')
