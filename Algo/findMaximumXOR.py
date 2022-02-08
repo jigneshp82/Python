@@ -30,6 +30,9 @@ class Trie:
             
     def check(self,val):
         head = self.root
+        val = bin(val|1<<32)[3:]
+        res = ''
+
         
 
 
@@ -43,6 +46,7 @@ class Solution:
         return(ans)
 
     def findMaximumXOR(self, nums: list) -> int:
+        
         pass
 
         
@@ -52,7 +56,7 @@ nums = [2,4,8,8,20]
 #print (s.findMaximumXOR(nums))
 
 
-x = 11
+x = 5
 print (f'{1<<32} , bin: {bin(1<<32)}')
 print (f'bin(x) : {bin(x)}')
 print (bin(x|1<<32)[3:])

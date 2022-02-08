@@ -23,11 +23,11 @@ class Solution:
         p1 = prices[0]
         p2 = -1
         maxprofit  = 0
-        for i in range(1,len(prices)):
-            p2 = prices[i]
-            if p2 < p1: p1 = p2
-            if p2-p1 > maxprofit:
-                maxprofit = p2 - p1
+        minprice = 0
+        for p in prices:
+            minprice = min(minprice, p)
+            profit = p - minprice
+            maxprofit = max(maxprofit, profit)
         return maxprofit
 
 

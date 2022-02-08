@@ -1,14 +1,14 @@
-class node:
+class ListNode:
     def __init__(self, data = None):
         self.data = data
         self.next = None
 
 class linklist:
     def __init__(self):
-        self.head = node()
+        self.head = ListNode()
 
     def appendlist(self,data):
-        newnode = node(data)
+        newnode = ListNode(data)
         curnode = self.head
         while curnode.next != None:
             curnode = curnode.next
@@ -74,18 +74,37 @@ class linklist:
 
             
 
-    
-            
+    def meargNode(self,Node:ListNode):
+        print (Node.data)
+        curr = self.head
+        while curr:
+            curr = curr.next
+            Next = curr.next
+            if Node.data > Next.data:
+                continue
+            else:
+                temp = curr.next
+                curr.next = Node
+                Node.next = temp
+                break
 
+"""          
 mylist = linklist()
-mylist.appendlist(20)
-mylist.appendlist(40)
-mylist.appendlist(30)
 mylist.appendlist(10)
+mylist.appendlist(20)
+mylist.appendlist(30)
+mylist.appendlist(40)
+mylist.appendlist(50)
 mylist.appendlist(70)
-mylist.appendlist(35)
+mylist.appendlist(100)
 mylist.display()
-mylist.delelement(3)
+mylist2 = linklist()
+mylist2.appendlist(60)
+mylist2.appendlist(80)
+cur = mylist2.head
+while cur:
+    cur = cur.next
+    mylist2.display()
+    mylist.meargNode(cur)
 mylist.display()
-mylist.bubblesort()
-mylist.display()
+"""
