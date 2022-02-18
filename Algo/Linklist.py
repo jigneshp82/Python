@@ -4,8 +4,8 @@ class ListNode:
         self.next = None
 
 class linklist:
-    def __init__(self):
-        self.head = ListNode()
+    def __init__(self, val = None):
+        self.head = ListNode(val)
 
     def appendlist(self,data):
         newnode = ListNode(data)
@@ -18,10 +18,10 @@ class linklist:
         elements= []
         stringelement = ''
         curnode = self.head
-        while curnode.next != None:
-            curnode = curnode.next
+        while curnode:
             elements.append(curnode.data)  
             stringelement = stringelement+str(curnode.data)
+            curnode = curnode.next
             if curnode.next != None:
                 stringelement = stringelement + ' -> '
         print (stringelement) 

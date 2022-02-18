@@ -98,7 +98,6 @@ class Node:
                 if root.right:
                     helpermethod(root.right, Sum)
             
-            pass
         
         if root:
             return(helpermethod(root,0))

@@ -69,12 +69,26 @@ l2 = [1,3,4]
 for v in l2:
     list2.appendlist(v)
 s = Solution()
-LL = [list1, list2]
-node = ListNode(3)
-list1.display()
-s.mergeKLists(LL)
-list1.display()
-s.mergeNode(list1,node)
-list1.display()
 
-#print(s.mergeKLists(LL))
+lst1 =[1,3,4,6]
+lst2 =[1,2,4,5,7]
+lst3 = []
+ptr1 = 0
+ptr2 = 0
+while ptr1 < len(lst1) or ptr2 < len(lst2):
+    if lst1[ptr1] < list2[ptr2]:
+        lst3.append(lst1[ptr1])
+        ptr1 +=1
+    else:
+        lst3.append(lst2[ptr2])
+        ptr2 +=1
+
+if ptr1 < len(lst1):
+    lst3.append(lst1[ptr1])
+    ptr1 +=1
+if ptr2 < len(lst2):
+    lst3.append(lst2[ptr2])
+    ptr2 +=1
+
+lst3
+

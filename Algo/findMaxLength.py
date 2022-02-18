@@ -15,5 +15,19 @@ Output: 2
 Explanation: [0, 1] (or [1, 0]) is a longest contiguous subarray with equal number of 0 and 1.
 """
 class Solution:
-    def findMaxLength(self, nums: List[int]) -> int:
-        
+    def findMaxLength(self, nums: list[int]) -> int:
+        dict = {}
+        max0 = 0
+        max1 = 0
+        for i, v in enumerate(nums):
+            if v == 0:
+                max0 +=1
+                max1 =0
+            
+
+        pass
+
+
+
+arr = [0,0,0,1,1,1,0,0,0,0,1,1,0,0,0,1,1,1,1,1,0,1,1,1,1]
+
