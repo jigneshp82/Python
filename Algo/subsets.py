@@ -38,15 +38,12 @@ class Solution:
         for n in nums:
             tmp = []
             for x in dp:
-                print (f'x : {x}, n : {n}')
                 tmp.append(x + [n])
-            print (f'tmp:{tmp}')
             dp.extend(tmp)
-            print(f'dp: {dp}')
         return dp
 
 
 s =Solution()
-nums = [1,2,3]
+nums = [1,2,3,4]
 print(s.subsets(nums))
 print(s.subsets2(nums))

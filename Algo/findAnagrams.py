@@ -20,19 +20,16 @@ The substring with start index = 1 is "ba", which is an anagram of "ab".
 The substring with start index = 2 is "ab", which is an anagram of "ab"
 
 """
+from typing import Counter
+
+
 class Solution:
     def findAnagrams(self, s: str, p: str) -> list[int]:
         ana = {}
         l = len(p)
         ans = []
-        dict = {}
+        dict = Counter(p)
         cnt = 0
-        for c in p:
-            if c in dict:
-                dict[c] +=1
-            else:
-                dict[c] = 1
-        print (dict)
 
         for i,c in enumerate(s):
             if c in p:

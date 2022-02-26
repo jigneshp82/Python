@@ -35,9 +35,6 @@ All elements of candidates are distinct.
 
 
 
-from re import L
-
-
 class Solution:
 
     def combinationSum(self, candidates: list[int], target: int) -> list[list[int]]:
@@ -64,8 +61,7 @@ class Solution:
         if currsum == target:
             newsublist = [i for i in sublist]
             self.res.append(newsublist)
-            return 
-        
+            return       
         
         
         for i in range(index, len(candidates)):

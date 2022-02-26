@@ -3,31 +3,37 @@ from curses.ascii import isdigit
 
 class Solution:
     def myAtoi(self, s: str) -> int:
-        d = 0
-        neg = False
-        for c in s:
-            if c.isdigit():
-                c = int(c)
-                d = d * 10 + c
-            elif c == '-':
-                if d == 0:
-                    neg = True
-            elif c in '+ ':
-                continue
-            else:
-                break
-        if neg:
-            d = -d
-
-        if d < -2147483648:
-             d = -2147483648
+        s = s.lstrip()
+        if not s:
+            return 0
+        st = 0
+        sign = 1
+        if s[0] == '-':
+            sign = -1
+            st = 1
+        elif s[0] == '+':
+            st = 1
+        res = 0
         
-        if d > 2147483647:
-            d = 2147483647
+        for c in s[st:]:
+            if not isdigit(c):
+                break
+            res = 10 * res + ord(c) - ord('0')
+        
+        res =res * sign
 
-        return(d)
+        if res < -2147483648:
+             res = -2147483648
+             
+        
+        if res > 2147483647:
+            res = 2147483647
+            
+        return res 
 
 s = Solution()
 
-print (s.myAtoi('   99999999999999999999'))
-print (s.myAtoi('   +1'))
+print (s.myAtoi('   -99999999999999999999'))
+print (s.myAtoi('   -143'))
+print (s.myAtoi('   143 dfdf '))
+print (s.myAtoi(' '))
