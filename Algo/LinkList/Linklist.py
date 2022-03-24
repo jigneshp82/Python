@@ -1,10 +1,10 @@
 class ListNode:
-    def __init__(self, data = None):
-        self.data = data
+    def __init__(self, val = None):
+        self.val = val
         self.next = None
 
 class linklist:
-    def __init__(self, val = None):
+    def __init__(self, val = 0):
         self.head = ListNode(val)
 
     def appendlist(self,data):
@@ -16,16 +16,15 @@ class linklist:
 
     def display(self):
         elements= []
-        stringelement = ''
+        if not self.head:
+            print ('empty list')
         curnode = self.head
         while curnode:
-            elements.append(curnode.data)  
-            stringelement = stringelement+str(curnode.data)
-            curnode = curnode.next
-            if curnode.next != None:
-                stringelement = stringelement + ' -> '
-        print (stringelement) 
-       
+            elements.append(curnode.val)  
+            curnode =curnode.next
+        print (*elements,sep = ',')
+
+
     def lengthoflist(self):
         curnode = self.head
         total =0
@@ -88,16 +87,17 @@ class linklist:
                 Node.next = temp
                 break
 
-"""          
-mylist = linklist()
-mylist.appendlist(10)
-mylist.appendlist(20)
-mylist.appendlist(30)
-mylist.appendlist(40)
-mylist.appendlist(50)
-mylist.appendlist(70)
-mylist.appendlist(100)
-mylist.display()
+if __name__ == "__main__":        
+    mylist = linklist()
+    mylist.appendlist(10)
+    mylist.appendlist(20)
+    mylist.appendlist(30)
+    mylist.appendlist(40)
+    mylist.appendlist(50)
+    mylist.appendlist(70)
+    mylist.appendlist(100)
+    mylist.display()
+"""
 mylist2 = linklist()
 mylist2.appendlist(60)
 mylist2.appendlist(80)
