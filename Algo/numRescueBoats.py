@@ -38,6 +38,27 @@ Constraints:
 1 <= people[i] <= limit <= 3 * 104
 """
 
+from collections import Counter
+
+
 class Solution:
-    def numRescueBoats(self, people: List[int], limit: int) -> int:
-        
+    def numRescueBoats(self, people:list, limit: int) -> int:
+        boats = 0
+        people = sorted(people)
+        lo = 0
+        hi = len(people)-1
+        while lo <= hi:
+            if people[lo]+people[hi] <= limit:
+                lo+=1
+                hi-=1
+            else:
+                hi-=1
+            boats +=1
+        return boats
+                    
+
+
+S = Solution()
+people = [3,5,3,4]
+limit = 5
+print(S.numRescueBoats(people, limit))

@@ -28,13 +28,13 @@ class Node:
     def inorder(self):
         if self.left:
             self.left.inorder()
-        print(self.val)
+        print(self.val, end = ' ')
         if self.right:
             self.right.inorder()
     
 
     def preorder(self):
-        print(self.val)
+        print(self.val, end = ',')
         if self.left:
             self.left.preorder()      
         if self.right:
@@ -107,14 +107,14 @@ class Node:
              
 
 
+if __name__ == '__main__':
+    n = Node(3)
+    n.insert(2)
+    n.insert(1)
+    n.insert(4)
+    n.insert(5)
 
-n = Node(3)
-n.insert(2)
-n.insert(1)
-n.insert(4)
-n.insert(5)
 
-
-n.preorder()
-print ('--')
-xx = n.isCousine2(1,5)
+    n.preorder()
+    print ('--')
+    xx = n.isCousine2(1,5)
