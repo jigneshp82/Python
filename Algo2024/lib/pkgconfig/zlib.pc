@@ -1,0 +1,13 @@
+prefix=/home/jignesh/Github/Python/Algo2024
+exec_prefix=/home/jignesh/Github/Python/Algo2024
+libdir=/home/jignesh/Github/Python/Algo2024/lib
+sharedlibdir=/home/jignesh/Github/Python/Algo2024/lib
+includedir=/home/jignesh/Github/Python/Algo2024/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

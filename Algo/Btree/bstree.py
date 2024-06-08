@@ -3,29 +3,25 @@ class Node:
         self.val = val
         self.left = left
         self.right = right
+    
+class Btree:
+    def __init__(self, val):
+        self.root = Node(val)
 
-    def insert(self, val):
-        if self.val:
-            if self.val > val:
-                if self.left:
-                    self.left.insert(val)
+    def insert(self,root:Node, val int):
+        if root:
+            if root.val > val:
+                if root.left:
+                    root.left.insert(val)
                 else:
-                    self.left = Node(val)
-            if self.val < val:
-                if self.right:
-                    self.right.insert(val)
+                    root.left = Node(val)
+            if root.val < val:
+                if root.right:
+                    root.right.insert(val)
                 else:
-                    self.right = Node(val)
+                    root.right = Node(val)        
 
-    def preInsert(self,val):
-        if self.val:
-            if self.left:
-                self.preInsert(val)
-            if self.right:
-                self.preInsert(val)
-        
-
-    def inorder(self):
+    def inorder(self, root):
         if self.left:
             self.left.inorder()
         print(self.val, end = ' ')
@@ -34,11 +30,12 @@ class Node:
     
 
     def preorder(self):
-        print(self.val, end = ',')
-        if self.left:
-            self.left.preorder()      
-        if self.right:
-            self.right.preorder()
+        if self:
+            print(self.val, end = ',')
+            if self.left:
+                self.left.preorder()      
+            if self.right:
+                self.right.preorder()
 
     def preorerList(self,L:list):
         if self.val:

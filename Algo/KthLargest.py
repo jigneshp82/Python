@@ -43,12 +43,24 @@ Constraints:
 At most 104 calls will be made to add.
 It is guaranteed that there will be at least k elements in the array when you search for the kth element.
 """
+import heapq as h
 class KthLargest:
 
-    def __init__(self, k: int, nums: List[int]):
-        
+    def __init__(self, k: int, nums: list[int]):
+        self.limit = k
+        self.heap = nums
+        h.heapify(self.heap)
+
+        while len(self.heap) > self.limit:
+            h.heappop(self.heap)
+
+
 
     def add(self, val: int) -> int:
+        h.heappush(self.heap, val)
+        if len(self.heap) > self.limit:
+            h.heappop(self.heap)
+        return self.heap[0]
         
 
 

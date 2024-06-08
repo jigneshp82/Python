@@ -33,7 +33,7 @@ It is guaranteed that the answer is unique.
 Follow up: Your algorithm's time complexity must be better than O(n log n), where n is the array's size.
 """
 
-from collections import Counter, OrderedDict
+from collections import Counter
 
 
 class Solution:
@@ -41,7 +41,6 @@ class Solution:
         freq = Counter(nums)
         sortedfreq = sorted(freq.items(), key = lambda x : x[1], reverse= True)
         ans = []
-        print (sortedfreq)
         for x in sortedfreq:
             ans.append(x[0])
             if len(ans) == k:
