@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.HashMap;
 
 class Solutions{
     public int subarraydivbyk(int[] arr, int k){
@@ -16,6 +17,20 @@ class Solutions{
         }
         System.out.println(Arrays.toString(prefix));
         return count;
+    }
+    public boolean checkSubarraySum(int[] nums, int k) {
+        HashMap<Integer,Integer> prefix = new HashMap<Integer, Integer>();
+        int currsum = 0;
+        int n = nums.length;
+        for (int i = 0; i <n ; i++ ){
+            currsum += nums[i];
+            int mod = currsum % k;
+            if mod 
+
+        }
+
+        
+        
     }
 
     public static void main(String[] args) {
